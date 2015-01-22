@@ -25,6 +25,7 @@ body {
     background-image: url(../images/stars.svg);
     width: 100%;
     height: 100vh;
+    -webkit-animation: stars 7s alternate infinite;
     animation: stars 7s alternate infinite;
 }
 
@@ -34,6 +35,7 @@ body {
     height: 200px;
     top: 200px;
     left: 200px;
+    -webkit-animation: asteroid-rotate 8s alternate infinite;
     animation: asteroid-rotate 8s alternate infinite;
 }
 
@@ -43,7 +45,24 @@ body {
     height: 600px;
     top: 400px;
     left: 600px;
+    -webkit-animation: ship-move 5s linear forwards infinite;
     animation: ship-move 5s linear forwards infinite;
+}
+
+@-webkit-keyframes ship-move {
+    0% {
+        -webkit-transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateX(-100px);
+    }
+    55% {
+        -webkit-transform: translateY(100px);
+    }
+    60% {
+        -webkit-transform: rotate(360deg);
+    }
+    
 }
 
 @keyframes ship-move {
@@ -62,12 +81,32 @@ body {
     
 }
 
+@-webkit-keyframes stars {
+    0% {
+        -webkit-transform: scale(1,1);
+    }
+    100% {
+        -webkit-transform: scale(3,3);
+    }
+}
+
 @keyframes stars {
     0% {
         transform: scale(1,1);
     }
     100% {
         transform: scale(3,3);
+    }
+}
+
+@-webkit-keyframes asteroid-rotate {
+    
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    
+    100% {
+        -webkit-transform: rotate(360deg);
     }
 }
     
@@ -81,7 +120,5 @@ body {
     100% {
         transform: rotate(360deg);
     }
-    
-    
 }
     
